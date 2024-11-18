@@ -1,0 +1,17 @@
+[project]
+name = "ruff-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "maxjost42", email = "max.jost@student.tugraz.at" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+ruff-pipeline = "ruff_pipeline:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
