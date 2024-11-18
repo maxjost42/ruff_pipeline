@@ -7,7 +7,10 @@ authors = [
     { name = "maxjost42", email = "max.jost@student.tugraz.at" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "furo>=2024.8.6",
+    "sphinx>=8.1.3",
+]
 
 [project.scripts]
 ruff-pipeline = "ruff_pipeline:main"
