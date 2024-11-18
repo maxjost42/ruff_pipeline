@@ -38,16 +38,16 @@ def count_vowels(s: Iterable[str]) -> int:
 def is_palindrome(s: Iterable[str]) -> bool:
     """Checks if a object containing ordered text is a palindrome.
 
-    A palindrome is a ordered list that doesn't change if the order of it's elements is reversed.
+        A palindrome is a ordered list that doesn't change if the order of it's elements is reversed.
 
-    :param s: ordered text
-    :return: `True` if **s** is a palindrome and `False` otherwise
+        :param s: ordered text
+        :return: `True` if **s** is a palindrome and `False` otherwise
 
-..  seealso::
+    ..  seealso::
 
-    You should see also:
+        You should see also:
 
-    `Wikipedias explanaition on palindromes. <https://en.wikipedia.org/wiki/Palindrome>`_
+        `Wikipedias explanaition on palindromes. <https://en.wikipedia.org/wiki/Palindrome>`_
     """
     s = "".join(char.lower() for char in s if char.isalnum())
     return s == s[::-1]
@@ -55,7 +55,7 @@ def is_palindrome(s: Iterable[str]) -> bool:
 
 def find_longest_word(sentence: str) -> int | str:
     """Finds the longest word in a sentance
-    
+
     :param sentence: a sentence containing words
     :return: either length of the longest word as `int` or an empty `str` if the sentence doesn't contain a word.
     """
@@ -69,11 +69,12 @@ T = TypeVar("T")
 
 def remove_duplicates(lst: Iterable[T]) -> List[T]:
     """Removes duplicate elements from an Iterable Object.
-    
+
     :param lst: an object containing elements
     :return: a List of the same elements but without duplicates.
     """
     return list(dict.fromkeys(lst))
+
 
 # an Interface
 class LEComparable(metaclass=ABCMeta):
@@ -83,10 +84,11 @@ class LEComparable(metaclass=ABCMeta):
 
 Comp = TypeVar("Comp", bound=LEComparable)
 
-#def merge_sorted_lists(list1: List, list2: List) -> List:
-def merge_sorted_lists(list1: Sequence[Comp], list2: Sequence[Any]) -> List[Comp|Any]:
+
+# def merge_sorted_lists(list1: List, list2: List) -> List:
+def merge_sorted_lists(list1: Sequence[Comp], list2: Sequence[Any]) -> List[Comp | Any]:
     """Merges two sorted lists, so that the Union is sorted too.
-    
+
     :param list1: first sorted list
     :param list2: second sorted list
     :return: a sorted List containing each element of the input lists.
@@ -107,7 +109,7 @@ def merge_sorted_lists(list1: Sequence[Comp], list2: Sequence[Any]) -> List[Comp
 
 def flatten_list(nested_list: List[object | List]) -> List:
     """Makes nested lists (aka. multidimensional lists) flat (aka. one dimensional)
-    
+
     :param nested_list: with arbitrary nestednes (aka. dimensionality)
     :return: a flat list with all elements contained in the nested_list.
     """
@@ -122,8 +124,8 @@ def flatten_list(nested_list: List[object | List]) -> List:
 
 def calculate_average(numbers: Collection) -> Number | float:
     """Calculates the average of all elements in numbers.
-    
-    :param numbers: object containing arbitrary numbers as elements 
+
+    :param numbers: object containing arbitrary numbers as elements
     :return: the average, which is the sum of all elements in numbers divided by the number of elements in numbers. Or 0 if numers is empty.
     """
     return sum(numbers) / len(numbers) if numbers else 0
@@ -131,7 +133,7 @@ def calculate_average(numbers: Collection) -> Number | float:
 
 def find_common_elements(list1: Iterable, list2: Iterable) -> List:
     """Basically computes the intersetction of two lists.
-    
+
     :param list1: some list
     :param list2: another list
     :return: a list containing only elements which are in both input lists.
@@ -143,7 +145,7 @@ def rotate_list(lst: List, k: int) -> List:
     """Rotates (aka. rolls) a list for k indices to get.
 
     roll means: new[(i+k) % len(old)] = old[i]
-    
+
     :param lst: an object containing elements
     :param k: number of roll steps to be performed
     :return: a rolled version of the input list.
