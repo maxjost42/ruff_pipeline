@@ -1,0 +1,23 @@
+name: ruff linting pipeline
+run-name: ${{ github.actor }}'s pushed code is inspected by ruff
+on: [push]
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.13"]
+    steps:
+      - run: echo "ruff linting check has been started by a ${{ github.event_name }} event!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+      - name: Setup Python ${{ matrix.python }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install project and dependencies
+        run: |
+          uv sync --python ${{ matrix.python }} --all-extras --dev
