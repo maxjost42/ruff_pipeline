@@ -24,4 +24,6 @@ jobs:
       - name: Analysing code with ruff linter
         run: |
           uv run ruff check
-
+      - name: Analysing code with ruff linter
+        run: |
+          uv run ruff format --diff
