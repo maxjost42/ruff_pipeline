@@ -21,3 +21,7 @@ jobs:
       - name: Install project and dependencies
         run: |
           uv sync --python ${{ matrix.python-version }} --all-extras --dev
+      - name: Analysing code with ruff linter
+        run: |
+          uv run ruff check
+
